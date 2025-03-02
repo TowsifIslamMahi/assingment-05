@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DOM Questions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">📖 DOM Questions & Answers</h1>
+
+        <div class="space-y-6">
+            <div>
+                <h2 class="text-xl font-semibold text-blue-600">1. Different ways to select an element in the DOM?</h2>
+                <ul class="list-disc ml-6 mt-2">
+                    <li><code>document.getElementById("id")</code> – By ID</li>
+                    <li><code>document.getElementsByClassName("class")</code> – By class</li>
+                    <li><code>document.getElementsByTagName("tag")</code> – By tag</li>
+                    <li><code>document.querySelector("selector")</code> – First matching element</li>
+                    
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-blue-600">2. Difference between innerHTML, innerText, and textContent?</h2>
+                <p><b>innerHTML:</b> Includes HTML tags inside element.</p>
+                <p><b>innerText:</b> Shows only visible text.</p>
+                <p><b>textContent:</b> Shows all text including hidden ones.</p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-blue-600">3. What is event delegation?</h2>
+                <p>Event delegation is when an event listener is added to a parent element and handles child elements.</p>
+                <pre class="bg-gray-200 p-2 rounded mt-2"><code>
+document.querySelector("#parent").addEventListener("click", function(event) {
+    if (event.target.matches(".child")) {
+        console.log("Child clicked!");
+    }
+});
+                </code></pre>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-blue-600">4. What is event bubbling?</h2>
+                <p>Event bubbling is when an event starts from the target element and moves up to its parents.</p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-blue-600">5. Creating, adding, and removing elements?</h2>
+                <pre class="bg-gray-200 p-2 rounded mt-2"><code>
+// Creating an element
+let newElement = document.createElement("p");
+newElement.textContent = "Hello World!";
+
+// Adding to body
+document.body.appendChild(newElement);
+
+// Removing element
+newElement.remove();
+                </code></pre>
+            </div>
+
+            <div class="mt-6">
+                <a href="more.html" class="bg-blue-500 text-white px-4 py-2 rounded">🔙 Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

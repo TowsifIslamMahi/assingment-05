@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" p-6">
+   
+      
+        <!-- sun icon -->
+       
+    <!-- Main Container -->
+   
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg flex">
+
+       
+        <div class="flex-1">
+           
+            
+            <div class="flex justify-between items-center mb-6">
+                
+                <img src="logo.png" alt="">
+                <h1 class="text-3xl font-bold mr-48" text-gray-800">Dev<span class="text-blue-600">Board</span></h1>
+                <div class="flex space-x-4">
+                    <div class="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg">
+                        Task Assigned: <span id="task-count" class="font-bold">6</span>
+                    </div>
+                    <div class="bg-green-100 text-green-700 px-4 py-2 rounded-lg">
+                        Completed: <span id="completed-count" class="font-bold">23</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Notification -->
+            <div id="discover" class="bg-blue-500 text-white p-4 rounded-lg flex justify-between items-center mb-6">
+                <span class="text-lg font-bold">📢 Discover Something New Today!</span>
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-semibold">🗓️ Wed, March 03 2025</span>
+                </div>
+            </div>
+
+            <!-- Task Cards -->
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Task 1 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">ShopEase</span>
+                    <h2 class="text-lg font-bold mt-2">Fix Mobile Button Issue</h2>
+                    <p class="text-sm text-gray-600">Debug using Chrome DevTools...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="btn" class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">CloudSync</span>
+                    <h2 class="text-lg font-bold mt-2">Add Dark Mode</h2>
+                    <p class="text-sm text-gray-600">Store the user’s preference...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="second" class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">SwiftPay</span>
+                    <h2 class="text-lg font-bold mt-2">Optimize Home Page</h2>
+                    <p class="text-sm text-gray-600">Debug using Chrome DevTools...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="third" class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">SwiftPay</span>
+                    <h2 class="text-lg font-bold mt-2">Optimize Home Page</h2>
+                    <p class="text-sm text-gray-600">Debug using Chrome DevTools...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="fourth" class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">Meta</span>
+                    <h2 class="text-lg font-bold mt-2">Add new emoji 🙌</h2>
+                    <p class="text-sm text-gray-600">Debug using Chrome DevTools...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="fifth" class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+
+                <!-- Task 5 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow task-card">
+                    <span class="text-xs bg-gray-300 px-2 py-1 rounded">Google LLC</span>
+                    <h2 class="text-lg font-bold mt-2">Integrate OpenAI API</h2>
+                    <p class="text-sm text-gray-600">Debug using Chrome DevTools...</p>
+                    <p class="text-xs mt-2 text-gray-500">Deadline: 21 March 2025</p>
+                    <button id="six"     class="complete-btn mt-3 px-3 py-1 bg-blue-500 text-white rounded">Complete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Log (Right Side) -->
+        <div class="w-1/4 bg-gray-100 p-4 rounded-lg ml-6">
+            <h2 class="text-lg font-bold mb-2">Activity Log</h2>
+            <button id="clear-log" class="px-3 py-1 bg-red-500 text-white rounded mb-2">Clear History</button>
+            <div id="activity-log" class="text-gray-700 text-sm space-y-2">
+                <p>You have completed "Add Dark Mode" at 12:48 PM</p>
+                <p>You have completed "Fix Mobile Button Issue" at 12:45 PM</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("btn").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+        document.getElementById("second").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+        document.getElementById("third").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+        document.getElementById("fourth").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+        document.getElementById("fifth").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+        document.getElementById("six").addEventListener("click", function(){
+            alert("Board Complete!");
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let taskCount = document.getElementById("task-count");
+            let completedCount = document.getElementById("completed-count");
+            let activityLog = document.getElementById("activity-log");
+
+            document.querySelectorAll(".complete-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    let currentTasks = parseInt(taskCount.textContent);
+                    let currentCompleted = parseInt(completedCount.textContent);
+
+                    if (currentTasks > 0) {
+                        taskCount.textContent = currentTasks - 1;
+                        completedCount.textContent = currentCompleted + 1;
+
+                        
+                        this.textContent = "Completed";
+                        this.classList.add("bg-gray-400");
+                        this.classList.remove("bg-blue-500");
+                        this.disabled = true;
+
+                        // Add to activity log
+                        let taskName = this.parentElement.querySelector("h2").textContent;
+                        let now = new Date();
+                        let time = now.toLocaleTimeString();
+                        let logEntry = document.createElement("p");
+                        logEntry.textContent = `You have completed "${taskName}" at ${time}`;
+                        activityLog.prepend(logEntry);
+                    }
+                });
+            });
+
+            // Clear Activity Log
+            document.getElementById("clear-log").addEventListener("click", function() {
+                activityLog.innerHTML = "";
+            });
+        });
+
+        document.getElementById("discover").addEventListener("click", function() {
+            window.location.href ="./working.html";
+        });
+   
+    </script>
+    </script>
+
+</body>
+</html>
